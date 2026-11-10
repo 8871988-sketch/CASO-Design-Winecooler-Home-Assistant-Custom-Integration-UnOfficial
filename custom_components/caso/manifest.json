@@ -1,0 +1,14 @@
+{
+  "domain": "caso",
+  "name": "CASO Wine Cooler (unofficial)",
+  "codeowners": [
+    "@8871988-sketch"
+  ],
+  "config_flow": true,
+  "documentation": "https://github.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial",
+  "integration_type": "device",
+  "iot_class": "cloud_polling",
+  "issue_tracker": "https://github.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/issues",
+  "requirements": [],
+  "version": "0.1.0"
+}

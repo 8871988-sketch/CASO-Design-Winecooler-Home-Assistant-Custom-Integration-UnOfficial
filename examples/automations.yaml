@@ -1,0 +1,50 @@
+# Example automations. Replace "wine_cooler" with the name of your device and
+# "notify.notify" with your notification service.
+
+- alias: "Wine cooler: zone too warm"
+  description: "Notify when a zone is 3 °C above its target for 30 minutes."
+  triggers:
+    - trigger: template
+      value_template: >
+        {{ states('sensor.wine_cooler_top_zone_temperature') | float(0)
+           > states('sensor.wine_cooler_top_zone_target_temperature') | float(99) + 3 }}
+      for: { minutes: 30 }
+      id: top
+    - trigger: template
+      value_template: >
+        {{ states('sensor.wine_cooler_bottom_zone_temperature') | float(0)
+           > states('sensor.wine_cooler_bottom_zone_target_temperature') | float(99) + 3 }}
+      for: { minutes: 30 }
+      id: bottom
+  actions:
+    - action: notify.notify
+      data:
+        title: Wine cooler
+        message: "The {{ trigger.id }} zone is too warm."
+  mode: queued
+
+- alias: "Wine cooler: no data from the cloud"
+  description: "Notify when the cooler has not reported for 2 hours."
+  triggers:
+    - trigger: template
+      value_template: >
+        {{ (now() - states('sensor.wine_cooler_last_report') | as_datetime(now()))
+           > timedelta(hours=2) }}
+  actions:
+    - action: notify.notify
+      data:
+        title: Wine cooler
+        message: "No data from the wine cooler for 2 hours. Check Wi-Fi and power."
+
+- alias: "Wine cooler: light in the evening"
+  triggers:
+    - trigger: sun
+      event: sunset
+      id: "on"
+    - trigger: time
+      at: "23:00:00"
+      id: "off"
+  actions:
+    - action: "light.turn_{{ trigger.id }}"
+      target:
+        entity_id: light.wine_cooler_light

@@ -1,0 +1,28 @@
+# Entities card for both zones. Replace "wine_cooler" with the name of your device.
+type: entities
+title: Wine Cooler
+entities:
+  - type: section
+    label: Top zone
+  - entity: sensor.wine_cooler_top_zone_temperature
+    name: Temperature
+  - entity: sensor.wine_cooler_top_zone_target_temperature
+    name: Target
+  - entity: binary_sensor.wine_cooler_top_zone
+    name: Zone on
+  - entity: light.wine_cooler_top_zone_light
+    name: Light
+  - type: section
+    label: Bottom zone
+  - entity: sensor.wine_cooler_bottom_zone_temperature
+    name: Temperature
+  - entity: sensor.wine_cooler_bottom_zone_target_temperature
+    name: Target
+  - entity: binary_sensor.wine_cooler_bottom_zone
+    name: Zone on
+  - entity: light.wine_cooler_bottom_zone_light
+    name: Light
+  - type: section
+  - entity: light.wine_cooler_light
+    name: Both lights
+  - entity: sensor.wine_cooler_last_report

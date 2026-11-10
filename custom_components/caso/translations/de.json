@@ -1,0 +1,91 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "CASO Weinkühlschrank verbinden",
+        "description": "Den API-Schlüssel gibt es unter https://www.casoapp.com/apikey, die Geräte-ID (Technical Device ID) unter https://www.casoapp.com/devices.",
+        "data": {
+          "name": "Name",
+          "api_key": "API-Schlüssel",
+          "device_id": "Geräte-ID"
+        },
+        "data_description": {
+          "device_id": "Technical Device ID aus dem CASO-Webportal"
+        }
+      },
+      "reauth_confirm": {
+        "title": "CASO API-Schlüssel erneuern",
+        "description": "Der API-Schlüssel für {name} wird nicht mehr akzeptiert. Bitte einen neuen eingeben.",
+        "data": {
+          "api_key": "API-Schlüssel"
+        }
+      },
+      "reconfigure": {
+        "title": "CASO API-Schlüssel ändern",
+        "description": "Neuen API-Schlüssel für {name} eingeben.",
+        "data": {
+          "api_key": "API-Schlüssel"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Die CASO-Cloud ist nicht erreichbar.",
+      "invalid_auth": "Der API-Schlüssel wird nicht akzeptiert.",
+      "invalid_device": "Die Geräte-ID ist für diesen API-Schlüssel nicht bekannt.",
+      "unknown": "Unerwarteter Fehler, siehe Protokoll."
+    },
+    "abort": {
+      "already_configured": "Dieser Weinkühlschrank ist bereits eingerichtet.",
+      "reauth_successful": "API-Schlüssel aktualisiert.",
+      "reconfigure_successful": "API-Schlüssel aktualisiert."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Optionen",
+        "data": {
+          "scan_interval": "Abfrageintervall (Minuten, mindestens 5)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "top_temperature": {
+        "name": "Temperatur oben"
+      },
+      "top_target_temperature": {
+        "name": "Solltemperatur oben"
+      },
+      "bottom_temperature": {
+        "name": "Temperatur unten"
+      },
+      "bottom_target_temperature": {
+        "name": "Solltemperatur unten"
+      },
+      "last_update": {
+        "name": "Letzte Meldung"
+      }
+    },
+    "binary_sensor": {
+      "top_power": {
+        "name": "Zone oben"
+      },
+      "bottom_power": {
+        "name": "Zone unten"
+      }
+    },
+    "light": {
+      "top_light": {
+        "name": "Licht oben"
+      },
+      "bottom_light": {
+        "name": "Licht unten"
+      },
+      "light": {
+        "name": "Licht"
+      }
+    }
+  }
+}

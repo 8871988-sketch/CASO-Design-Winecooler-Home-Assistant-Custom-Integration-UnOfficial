@@ -1,0 +1,91 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Connect CASO wine cooler",
+        "description": "Get the API key at https://www.casoapp.com/apikey and the device ID (technical device ID) at https://www.casoapp.com/devices.",
+        "data": {
+          "name": "Name",
+          "api_key": "API key",
+          "device_id": "Device ID"
+        },
+        "data_description": {
+          "device_id": "Technical device ID from the CASO web portal"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Renew CASO API key",
+        "description": "The API key for {name} is no longer accepted. Enter a new one.",
+        "data": {
+          "api_key": "API key"
+        }
+      },
+      "reconfigure": {
+        "title": "Change CASO API key",
+        "description": "Enter the new API key for {name}.",
+        "data": {
+          "api_key": "API key"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Cannot reach the CASO cloud.",
+      "invalid_auth": "The API key is not accepted.",
+      "invalid_device": "The device ID is not known to the CASO cloud for this API key.",
+      "unknown": "Unexpected error, see the log."
+    },
+    "abort": {
+      "already_configured": "This wine cooler is already configured.",
+      "reauth_successful": "API key updated.",
+      "reconfigure_successful": "API key updated."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Options",
+        "data": {
+          "scan_interval": "Polling interval (minutes, at least 5)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "top_temperature": {
+        "name": "Top zone temperature"
+      },
+      "top_target_temperature": {
+        "name": "Top zone target temperature"
+      },
+      "bottom_temperature": {
+        "name": "Bottom zone temperature"
+      },
+      "bottom_target_temperature": {
+        "name": "Bottom zone target temperature"
+      },
+      "last_update": {
+        "name": "Last report"
+      }
+    },
+    "binary_sensor": {
+      "top_power": {
+        "name": "Top zone"
+      },
+      "bottom_power": {
+        "name": "Bottom zone"
+      }
+    },
+    "light": {
+      "top_light": {
+        "name": "Top zone light"
+      },
+      "bottom_light": {
+        "name": "Bottom zone light"
+      },
+      "light": {
+        "name": "Light"
+      }
+    }
+  }
+}

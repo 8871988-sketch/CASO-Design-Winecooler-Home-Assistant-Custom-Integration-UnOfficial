@@ -1,0 +1,91 @@
+{
+  "config": {
+    "step": {
+      "user": {
+        "title": "Підключити винну шафу CASO",
+        "description": "API-ключ: https://www.casoapp.com/apikey, ID пристрою (Technical Device ID): https://www.casoapp.com/devices.",
+        "data": {
+          "name": "Назва",
+          "api_key": "API-ключ",
+          "device_id": "ID пристрою"
+        },
+        "data_description": {
+          "device_id": "Technical Device ID з веб-порталу CASO"
+        }
+      },
+      "reauth_confirm": {
+        "title": "Оновити API-ключ CASO",
+        "description": "API-ключ для {name} більше не приймається. Введіть новий.",
+        "data": {
+          "api_key": "API-ключ"
+        }
+      },
+      "reconfigure": {
+        "title": "Змінити API-ключ CASO",
+        "description": "Введіть новий API-ключ для {name}.",
+        "data": {
+          "api_key": "API-ключ"
+        }
+      }
+    },
+    "error": {
+      "cannot_connect": "Хмара CASO недоступна.",
+      "invalid_auth": "API-ключ не приймається.",
+      "invalid_device": "ID пристрою невідомий для цього API-ключа.",
+      "unknown": "Неочікувана помилка, див. журнал."
+    },
+    "abort": {
+      "already_configured": "Цю винну шафу вже налаштовано.",
+      "reauth_successful": "API-ключ оновлено.",
+      "reconfigure_successful": "API-ключ оновлено."
+    }
+  },
+  "options": {
+    "step": {
+      "init": {
+        "title": "Параметри",
+        "data": {
+          "scan_interval": "Інтервал опитування (хвилини, щонайменше 5)"
+        }
+      }
+    }
+  },
+  "entity": {
+    "sensor": {
+      "top_temperature": {
+        "name": "Температура верх"
+      },
+      "top_target_temperature": {
+        "name": "Задана температура верх"
+      },
+      "bottom_temperature": {
+        "name": "Температура низ"
+      },
+      "bottom_target_temperature": {
+        "name": "Задана температура низ"
+      },
+      "last_update": {
+        "name": "Останнє повідомлення"
+      }
+    },
+    "binary_sensor": {
+      "top_power": {
+        "name": "Зона верх"
+      },
+      "bottom_power": {
+        "name": "Зона низ"
+      }
+    },
+    "light": {
+      "top_light": {
+        "name": "Світло верх"
+      },
+      "bottom_light": {
+        "name": "Світло низ"
+      },
+      "light": {
+        "name": "Світло"
+      }
+    }
+  }
+}
