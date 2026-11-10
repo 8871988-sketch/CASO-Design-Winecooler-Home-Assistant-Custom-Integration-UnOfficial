@@ -145,8 +145,17 @@ The device and all entities, history and automations stay as they are.
 
 ## Examples
 
+A complete dashboard view with a gauge, tiles and light switches per zone, plus a 24-hour temperature graph:
+
+![Dashboard – zones](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/dashboard_zones.png)
+
+![Dashboard – lights and history](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/dashboard_overview.png)
+
+The gauge colours are: blue below 5 °C, green 5–18 °C (wine range), orange 18–22 °C, red above 22 °C.
+
 See the [`examples`](examples) folder:
 
+- [`dashboard_view.yaml`](examples/dashboard_view.yaml) – the complete view shown above
 - [`dashboard_card.yaml`](examples/dashboard_card.yaml) – an entities card for both zones
 - [`automations.yaml`](examples/automations.yaml) – temperature alarm and light schedule
 

@@ -1,0 +1,73 @@
+# Complete dashboard view (sections layout) as shown in the README screenshots.
+# Dashboard → ✏️ Edit → ⋮ → Raw configuration editor, then add this as a view.
+# Replace "wine_cooler" with the name of your device.
+title: Wine Cooler
+path: wine-cooler
+icon: mdi:liquor
+type: sections
+max_columns: 3
+sections:
+  - type: grid
+    cards:
+      - type: heading
+        heading: Top zone
+        heading_style: title
+        icon: mdi:arrow-up-bold-box-outline
+      - &gauge
+        type: gauge
+        entity: sensor.wine_cooler_top_zone_temperature
+        name: Current temperature
+        min: 0
+        max: 25
+        needle: true
+        segments:
+          - { from: 0, color: "#2196f3" }   # too cold
+          - { from: 5, color: "#4caf50" }   # wine range
+          - { from: 18, color: "#ff9800" }  # warm
+          - { from: 22, color: "#f44336" }  # too warm
+        grid_options: { columns: 12 }
+      - { type: tile, entity: sensor.wine_cooler_top_zone_temperature, name: Temperature, grid_options: { columns: 6 } }
+      - { type: tile, entity: sensor.wine_cooler_top_zone_target_temperature, name: Target, icon: mdi:thermometer-check, grid_options: { columns: 6 } }
+      - { type: tile, entity: binary_sensor.wine_cooler_top_zone, name: Zone, grid_options: { columns: 6 } }
+      - type: tile
+        entity: light.wine_cooler_top_zone_light
+        name: Light top
+        features: [{ type: toggle }]
+        grid_options: { columns: 6 }
+  - type: grid
+    cards:
+      - type: heading
+        heading: Bottom zone
+        heading_style: title
+        icon: mdi:arrow-down-bold-box-outline
+      - <<: *gauge
+        entity: sensor.wine_cooler_bottom_zone_temperature
+      - { type: tile, entity: sensor.wine_cooler_bottom_zone_temperature, name: Temperature, grid_options: { columns: 6 } }
+      - { type: tile, entity: sensor.wine_cooler_bottom_zone_target_temperature, name: Target, icon: mdi:thermometer-check, grid_options: { columns: 6 } }
+      - { type: tile, entity: binary_sensor.wine_cooler_bottom_zone, name: Zone, grid_options: { columns: 6 } }
+      - type: tile
+        entity: light.wine_cooler_bottom_zone_light
+        name: Light bottom
+        features: [{ type: toggle }]
+        grid_options: { columns: 6 }
+  - type: grid
+    cards:
+      - type: heading
+        heading: Wine cooler
+        heading_style: title
+        icon: mdi:bottle-wine
+      - type: tile
+        entity: light.wine_cooler_light
+        name: Light (both zones)
+        features: [{ type: toggle }]
+        grid_options: { columns: 6 }
+      - { type: tile, entity: sensor.wine_cooler_last_report, name: Last report, grid_options: { columns: 6 } }
+      - type: history-graph
+        title: Temperatures (24 h)
+        hours_to_show: 24
+        grid_options: { columns: 12 }
+        entities:
+          - { entity: sensor.wine_cooler_top_zone_temperature, name: Top }
+          - { entity: sensor.wine_cooler_top_zone_target_temperature, name: Top target }
+          - { entity: sensor.wine_cooler_bottom_zone_temperature, name: Bottom }
+          - { entity: sensor.wine_cooler_bottom_zone_target_temperature, name: Bottom target }
