@@ -79,6 +79,8 @@ Single-zone models are not tested. If you own one, please open an issue with the
 1. **Settings → Devices & services → Add integration** → search for **CASO Wine Cooler**.
 2. Fill in the form:
 
+   ![Setup form](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/setup.png)
+
    | Field | Meaning |
    |---|---|
    | **Name** | Name of the device in Home Assistant, e.g. `Wine Cooler`. Entity IDs are created from it. |
@@ -95,7 +97,13 @@ Single-zone models are not tested. If you own one, please open an issue with the
 
 Each wine cooler is one configuration entry. Add the integration again for a second cooler.
 
+![Integration page](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/integration_page.png)
+
 ## Entities
+
+![Device page](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/device_page.png)
+
+![Device info](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/device_info.png)
 
 With the device name `Wine Cooler` you get (entity IDs depend on your name and language):
 
@@ -117,6 +125,8 @@ The API reports whole degrees Celsius.
 ## Options
 
 **Settings → Devices & services → CASO Wine Cooler → Configure**
+
+![Options](https://raw.githubusercontent.com/8871988-sketch/CASO-Design-Winecooler-Home-Assistant-Custom-Integration-UnOfficial/main/docs/images/options.png)
 
 | Option | Default | Range | Meaning |
 |---|---|---|---|
