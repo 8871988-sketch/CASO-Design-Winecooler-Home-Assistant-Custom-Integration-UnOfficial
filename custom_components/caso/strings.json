@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Connect CASO wine cooler",
-        "description": "Get the API key at https://www.casoapp.com/apikey and the device ID (technical device ID) at https://www.casoapp.com/devices.",
+        "description": "Get the API key at {api_key_url} and the device ID (technical device ID) at {devices_url}.",
         "data": {
           "name": "Name",
           "api_key": "API key",

@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "Підключити винну шафу CASO",
-        "description": "API-ключ: https://www.casoapp.com/apikey, ID пристрою (Technical Device ID): https://www.casoapp.com/devices.",
+        "description": "API-ключ: {api_key_url}, ID пристрою (Technical Device ID): {devices_url}.",
         "data": {
           "name": "Назва",
           "api_key": "API-ключ",

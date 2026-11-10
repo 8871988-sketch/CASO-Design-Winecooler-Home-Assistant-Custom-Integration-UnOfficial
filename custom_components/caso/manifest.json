@@ -1,6 +1,9 @@
 {
   "domain": "caso",
   "name": "CASO Wine Cooler (unofficial)",
+  "categories": [
+    "appliances_cleaning.cooking"
+  ],
   "codeowners": [
     "@8871988-sketch"
   ],

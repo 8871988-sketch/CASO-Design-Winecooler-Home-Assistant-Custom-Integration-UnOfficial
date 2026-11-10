@@ -27,6 +27,10 @@ from .const import (
 _LOGGER = logging.getLogger(__name__)
 
 DEFAULT_NAME = "Wine Cooler"
+PORTAL_URLS = {
+    "api_key_url": "https://www.casoapp.com/apikey",
+    "devices_url": "https://www.casoapp.com/devices",
+}
 _SECRET = TextSelector(TextSelectorConfig(type=TextSelectorType.PASSWORD))
 
 USER_SCHEMA = vol.Schema(
@@ -83,6 +87,7 @@ class CasoConfigFlow(ConfigFlow, domain=DOMAIN):
             step_id="user",
             data_schema=self.add_suggested_values_to_schema(USER_SCHEMA, suggested),
             errors=errors,
+            description_placeholders=PORTAL_URLS,
         )
 
     async def async_step_reauth(self, entry_data: Mapping[str, Any]) -> ConfigFlowResult:

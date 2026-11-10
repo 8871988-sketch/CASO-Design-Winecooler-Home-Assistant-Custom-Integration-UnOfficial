@@ -3,7 +3,7 @@
     "step": {
       "user": {
         "title": "CASO Weinkühlschrank verbinden",
-        "description": "Den API-Schlüssel gibt es unter https://www.casoapp.com/apikey, die Geräte-ID (Technical Device ID) unter https://www.casoapp.com/devices.",
+        "description": "Den API-Schlüssel gibt es unter {api_key_url}, die Geräte-ID (Technical Device ID) unter {devices_url}.",
         "data": {
           "name": "Name",
           "api_key": "API-Schlüssel",
